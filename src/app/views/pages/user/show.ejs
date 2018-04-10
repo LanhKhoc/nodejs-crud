@@ -1,0 +1,28 @@
+<section class="">
+  <div class="container">
+    <div class="col-md-6 offset-3 u-mgt-30">
+      <h2 class="u-text-center">Edit user</h2>
+      <form action="/user/update/<%= userEdit.id %>" method="POST" class="form">
+        <div class="form-group">
+          <input type="text" class="form-control" name="username" placeholder="Username" value="<%= userEdit.username %>" />
+        </div>
+  
+        <div class="form-group">
+          <input type="text" class="form-control" name="email" placeholder="Email" value="<%= userEdit.email %>" />
+        </div>
+
+        <div class="form-group">
+          <input type="date" class="form-control" name="birthday" placeholder="Birthday" value="<%= userEdit.birthday %>" />
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" name="address" placeholder="Address" value="<%= userEdit.address %>" />
+        </div>
+  
+        <div class="form-group text-center">
+          <button class="btn btn-success u-cursor-pointer" type="submit">SAVE</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

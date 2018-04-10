@@ -1,0 +1,36 @@
+<section class="c-user">
+  <div class="container">
+    <div class="u-mgt-30 u-mgb-30 u-text-center">
+        <a href="/user/create" class="btn btn-info" title="Add User"><i class="fas fa-user-plus"></i></a>
+    </div>
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Birthday</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% listUsers.forEach(item => { %>
+            <tr>
+              <td><%= item.username %></td>
+              <td><%= item.email %></td>
+              <td><%= item.birthday %></td>
+              <td><%= item.address %></td>
+              <td align="center">
+                <a href="/user/show/<%= item.id %>" class="btn btn-warning" title="Edit User"><i class="fas fa-edit"></i></a>
+                <form action="/user/destroy/<%= item.id %>" method="POST" class="u-d-ib">
+                  <button type="submit" class="btn btn-danger u-cursor-pointer js-delete" title="Delete User">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>

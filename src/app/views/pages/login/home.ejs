@@ -1,0 +1,82 @@
+<section class="c-login-register">
+  <div class="container">
+      <div class="col-md-6 offset-md-3">
+        <div class="c-login-register__panel">
+            <div class="col-md-8 offset-md-2">
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#register">Register</a>
+                </li>
+              </ul>
+            </div>
+              
+              <!-- Tab panes -->
+            <div class="tab-content c-login-register__tab-content">
+              <div class="tab-pane active container" id="login">
+                <% if(error) { %>
+                  <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Danger!</strong> <%= error %>
+                  </div>
+                <% } %>
+                
+                <form action="/login/check" method="POST"class="form">
+                  <div class="form-group">
+                    <input 
+                      type="text" 
+                      name="username" 
+                      class="form-control" 
+                      placeholder="Username" 
+                      value="<%= username %>"
+                    />
+                  </div>
+  
+                  <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Password" />
+                  </div>
+  
+                  <div class="form-group c-login-register__remember-me text-center">
+                    <input type="checkbox" name="remember" id="remember" />
+                    <label for="remember">Remember Me</label>
+                  </div>
+  
+                  <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary u-cursor-pointer">LOGIN</button>
+                  </div>
+  
+                  <div class="form-group text-center">
+                      <a href="#">Forgot password</a>
+                    </div>
+                </form>
+              </div>
+              <div class="tab-pane container" id="register">
+                <form action="" class="form">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" />
+                  </div>
+  
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email" />
+                  </div>
+  
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Password" />
+                  </div>
+  
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Confirm Password" />
+                  </div>
+  
+                  <div class="form-group text-center">
+                    <button class="btn btn-success u-cursor-pointer">REGISTER NOW</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</section>

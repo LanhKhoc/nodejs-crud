@@ -1,0 +1,17 @@
+<header class="c-header">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="c-header__logo"><a href="/"><i class="fab fa-d-and-d"></i></a></div>
+      </div>
+      <div class="col-md-6 u-text-right u-no-select">
+        <% if(Object.keys(userInfo).length > 0) { %>
+          <span class="u-color-white">Hello, <strong><%= userInfo.username %></strong></span>
+          <a href="/logout" class="btn btn-secondary u-mgl-10 u-cursor-pointer">Logout</a>
+        <% } else { %>
+          <h2 class="m-0 u-color-white u-cursor-default">Welcome to NodeJS!!!</h2>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</header>
